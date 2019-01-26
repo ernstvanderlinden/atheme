@@ -69,6 +69,9 @@ Usage
 - M-x ```atheme-next-theme```
 - M-x ```atheme-select-theme```
 
+#### Number prefix
+- ```C-u prefix``` to skip atheme selection and auto-select theme
+
 #### Hooks
 
 - ```atheme-pre-load-theme-hook```
@@ -95,3 +98,4 @@ Usage
                    (interactive)
                    (atheme-load-theme 'zenburn)))
 ```
+
