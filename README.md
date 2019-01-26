@@ -65,14 +65,14 @@ Usage
 
 #### Interactive functions
 
-- M-x atheme-current-theme-message
-- M-x atheme-next-theme
-- M-x atheme-select-theme
+- M-x ```atheme-current-theme-message```
+- M-x ```atheme-next-theme```
+- M-x ```atheme-select-theme```
 
 #### Hooks
 
-- atheme-before-load-theme-hook
-- atheme-after-load-theme-hook
+- ```atheme-before-load-theme-hook```
+- ```atheme-after-load-theme-hook```
 
 ##### Hook example
 
