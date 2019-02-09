@@ -49,14 +49,15 @@
 ;; 
 ;; Interactive functions:
 ;; 
-;;   M-x atheme-current-theme-message
-;;   M-x atheme-next-theme
-;;   M-x atheme-select-theme
+;;   M-x `atheme-current-theme-message'
+;;   M-x `atheme-next-theme'
+;;   M-x `atheme-select-theme'
+;;   M-x `atheme-disable-current-theme'
 ;;
 ;; Hooks:
 ;;
-;;   atheme-before-load-theme-hook
-;;   atheme-after-load-theme-hook
+;;   `atheme-before-load-theme-hook'
+;;   `atheme-after-load-theme-hook'
 ;; 
 ;;   Hook example:
 ;;   
@@ -112,6 +113,11 @@ The theme without suffix is the function which will be called."
       (setq atheme--next-theme-list atheme-theme-list)
     (error "Variable `atheme-theme-list' is nil")))
 
+(defun atheme-disable-current-theme ()
+  (interactive)
+  (when atheme--current-theme
+    (disable-theme atheme--current-theme)))
+
 (defun atheme-load-theme (theme)
   "Disable current theme and load new THEME."
   (when atheme-pre-load-theme-hook
@@ -120,8 +126,7 @@ The theme without suffix is the function which will be called."
   (when (atheme--init-p)
     (atheme-init))
   ;; disable current theme?
-  (when atheme--current-theme
-    (disable-theme atheme--current-theme))
+  (atheme-disable-current-theme)
   (setq atheme--current-theme theme
         ;; remove current theme from list
         atheme--next-theme-list (remove atheme--current-theme
