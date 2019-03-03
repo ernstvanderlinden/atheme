@@ -160,7 +160,8 @@ The theme without suffix is the function which will be called."
 If `integer' prefix argument ARG is provided, `atheme' will skip `ivy'
 auto-select the theme from `atheme-theme-list'."
   (interactive "P")
-  (let ((themes atheme-theme-list))
+  (let ((themes atheme-theme-list)
+        (ivy-sort-functions-alist nil))
     (if arg
         (atheme-load-theme
          (nth (1- (prefix-numeric-value arg))
