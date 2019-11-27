@@ -118,6 +118,10 @@ The theme without suffix is the function which will be called."
   (when atheme--current-theme
     (disable-theme atheme--current-theme)))
 
+(defun atheme-disable-custom-themes ()
+  (interactive)
+  (mapc #'disable-theme custom-enabled-themes))
+
 (defun atheme-load-theme (theme)
   "Disable current theme and load new THEME."
   (when atheme-pre-load-theme-hook
